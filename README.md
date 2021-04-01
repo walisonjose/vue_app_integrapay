@@ -1,5 +1,13 @@
-# vue-vuex-registration-login-example
+# Teste Desenvolvedor Integrapay
+Repositório criado para realização do teste de Desenenvolvedor Pleno na empresa Integrapay.
 
-Vue + Vuex - User Registration and Login Tutorial & Example
-
-To see a demo and further details go to http://jasonwatmore.com/post/2018/07/14/vue-vuex-user-registration-and-login-tutorial-example
+# Implantando a aplicação
+###### Clonando o repositório
+* git clone https://github.com/walisonjose/vue_app_integrapay.git <dir_aplicacao>
+* cd <dir_aplicacao>
+ ###### Instalando as dependencias
+* npm install
+ ###### Executando aaplicação
+* npm start
+###### Acessando a aplicação
+* Abra o navegador e acesse o endereço [http://localhost:8000/](http://localhost:8000/)
