@@ -9,7 +9,7 @@ export function configureFakeBackend() {
             setTimeout(() => {
 
                 // authenticate
-                if (url.endsWith('/users/authenticate') && opts.method === 'POST') {
+                if (url.endsWith('/api/login') && opts.method === 'POST') {
                     // get parameters from post request
                     let params = JSON.parse(opts.body);
 
@@ -31,7 +31,7 @@ export function configureFakeBackend() {
                         resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(responseJson)) });
                     } else {
                         // else return error
-                        reject('Username or password is incorrect');
+                        reject('Login ou senha não estão corretos!');
                     }
 
                     return;
@@ -44,7 +44,7 @@ export function configureFakeBackend() {
                         resolve({ ok: true, text: () => Promise.resolve(JSON.stringify(users))});
                     } else {
                         // return 401 not authorised if token is null or invalid
-                        reject('Unauthorised');
+                        reject('Acesso Negado! Tente novamente mais tarde.');
                     }
 
                     return;
@@ -64,7 +64,7 @@ export function configureFakeBackend() {
                         resolve({ ok: true, text: () => JSON.stringify(user)});
                     } else {
                         // return 401 not authorised if token is null or invalid
-                        reject('Unauthorised');
+                        reject('Acesso Negado! Tente novamente mais tarde.');
                     }
 
                     return;
@@ -78,7 +78,7 @@ export function configureFakeBackend() {
                     // validation
                     let duplicateUser = users.filter(user => { return user.username === newUser.username; }).length;
                     if (duplicateUser) {
-                        reject('Username "' + newUser.username + '" is already taken');
+                        reject('usuário "' + newUser.username + '" já cadastrado');
                         return;
                     }
 

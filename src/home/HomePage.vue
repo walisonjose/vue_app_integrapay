@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Hi {{account.user.firstName}}!</h1>
-        <p>You're logged in with Vue + Vuex & JWT!!</p>
+        <h1>Olá {{account.user.firstName}}!</h1>
+        
         <!--h3>Users from secure api end point:</h3>
         <em v-if="users.loading">Loading users...</em>
         <span v-if="users.error" class="text-danger">ERROR: {{users.error}}</span>
@@ -14,18 +14,24 @@
             </li>
         </ul-->
 
-         <h3>Perfis salvos:</h3>
+         <h3>Perfis Github favoritados:</h3>
         <em v-if="users.loading">Loading users...</em>
         <span v-if="users.error" class="text-danger">ERROR: {{users.error}}</span>
         <ul v-if="users.items">
             <li v-for="profile in users.items" :key="profile.id">
-                {{profile.login + ' '}}
+
+             
+                {{profile.login + ' '}} <br />
+
+
+                <img :src='profile.photo_url' alt='' width="100" height="100">
                 
             </li>
         </ul>
         <p>
-            <router-link to="/login">Logout</router-link>
+            <router-link to="/login">Sair</router-link>
         </p>
+ 
     </div>
 </template>
 
